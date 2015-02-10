@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+/assets/bower_components
+/node_modules
+/npm-debug.log
+/site/accounts
+/assets/avatars
+/thumbs/*
