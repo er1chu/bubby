@@ -1,5 +1,5 @@
 # Bubby
-Front-end starter kit for Kirby utilizing Grunt, Stylus, Jeet, Bower. Jump-starts development without the baggage of bloated front-end frameworks. For the typographic-conscious.
+Front-end starter kit for Kirby utilizing Grunt, Stylus, Jeet, Bower. Jump-starts development without the baggage of bloated front-end frameworks.
 
 ## Features:
 - Grunt for task management (e.g. concatenation and uglification of JS files, compiling and minifying Stylus to CSS, LiveReload, etc)
