@@ -1,4 +1,5 @@
 // Example: webfont('Franklin Gothic', 'franklingothic', true, 'bold')
+
 font-url(file)
 	return '../fonts/' + file
 
@@ -17,3 +18,43 @@ webfont(family, file, hack-chrome-windows = false, weight = 'normal')
 			@font-face
 				font-family family
 				src url(font-url(file + '.svg#'+ family)) format('svg')
+
+ 
+ // First paragraph is flush, all paragraphs after are indented
+ // Example: .paragraph 
+ // 			flowing-paragraph(0.5em)
+
+flowing-paragraph(n)
+	p
+		margin-bottom: 0
+	p + p
+		text-indent: (n)
+
+// Control type size and spacing for abbreviations
+// Example: .paragraph
+// 				abbreviation(26px,0.4em)
+
+abbr(type-size, kerning)
+	abbr
+		font-size: type-size
+		letter-spacing: kerning
+
+// Antialiasing applied to light type on dark backgrounds
+// Example: .paragraph
+// 				font-smooth()
+
+font-smoothing()
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+
+// Vertical and horizontal centering, use sparingly as it degrade type integrity
+// Example: .element
+// 				dead-center(fixed)
+
+dead-center(position)
+	position: position
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+

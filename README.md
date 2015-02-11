@@ -3,7 +3,7 @@ Minimal front-end starter kit for Kirby utilizing Grunt, Stylus, Jeet, Bower. Ju
 
 ## Features:
 - Grunt for task management (e.g. concatenation and uglification of JS files, compiling and minifying Stylus to CSS, LiveReload, etc)
-- Bower for package management (includes JQuery)
+- Bower for package management (includes jQuery)
 - Jeet for lightweight but highly customizable responsive grids
 - Powerful mixins for beautiful web typography, media queries, unit conversions and fallbacks (in progress)
 
@@ -12,12 +12,22 @@ Minimal front-end starter kit for Kirby utilizing Grunt, Stylus, Jeet, Bower. Ju
 To easily link web fonts in your font folder
 ````
 webfont('[Font Family]', '[File name without extension]', true, '[Font weight]')
+// Example: webfont('Franklin Gothic', 'franklingothic', true, 'bold')
 ````
-Example:
+To have flowing paragraphs with no margins where the initial pargraph is flushed, and all following paragraphs are indented by text.
 ````
-webfont('Franklin Gothic', 'franklingothic', true, 'bold')
+flowing-paragraph([indentation])
+// Example: .paragraph 
+// 				flowing-paragraph(0.5em)
 ````
-More coming soon.
+To adjust the font-size and spacing of abbreviations and acronyms. More legible alternative to small caps for paragraph text. Used in conjunction with the `<abbr>` tag.
+````
+abbr([font-size], [letter-spacing])
+// Example: .paragraph
+//				abbr(16px,0.2em)
+
+````
+More in progress.
 
 ## To be added - Grunt:
 - Automatic PHP server launch
