@@ -11,26 +11,42 @@ Minimal front-end starter kit for Kirby utilizing Grunt, Stylus, Jeet, Bower. Ju
 ## Typography - (work in progress)
 To easily link web fonts in your font folder
 ````
-webfont('[Font Family]', '[File name without extension]', true, '[Font weight]')
+webfont('Font Family', 'File name without extension', true, 'Font weight')
 // Example: webfont('Franklin Gothic', 'franklingothic', true, 'bold')
+````
+This compiles to:
+````
+@font-face {
+    font-family: 'Franklin Gothic';
+    src: url("../fonts/franklingothic.eot");
+    src: url("../fonts/franklingothic.eot?#iefix") format('embedded-opentype'), url("../fonts/franklingothic.woff") format('woff'), url("../fonts/franklingothic.ttf") format('truetype'), url("../fonts/franklingothic.svg#Franklin Gothic") format('svg');
+    font-weight: 'bold';
+    font-style: normal;
+}
 ````
 To have flowing paragraphs with no margins where the initial pargraph is flushed, and all following paragraphs are indented by text.
 ````
 flowing-paragraph([indentation])
-// Example: .paragraph 
+// Example: .div-class
 // 				flowing-paragraph(0.5em)
 ````
 To adjust the font-size and spacing of abbreviations and acronyms. More legible alternative to small caps for paragraph text. Used in conjunction with the `<abbr>` tag.
 ````
 abbr([font-size], [letter-spacing])
-// Example: .paragraph
+// Example: .div-class
 //				abbr(16px,0.2em)
 
+````
+For light type on dark backgrounds, you can antialiase your type simply by using:
+````
+font-smoothing()
+// Example: .div-class
+//				font-smoothing()
 ````
 More in progress.
 
 ## Grid
-The grid system is based on Jeet. Rather than using something like `.col-4` seen other css grid frameworks, you can pass any ratio or fraction or both to create a completely custom grid.
+The grid system uses on Jeet. Rather than using something like `.col-4` seen in other css grid frameworks, you can pass any ratio or fraction or both to create a completely custom grid.
 
 If you want something that takes up a quarter of the space of its parent container:
 ````
@@ -46,7 +62,16 @@ If you need a grid without gutters, use spans instead.
 ````
 span(1/5)
 ````
+`cycle` and `uncycle` are pretty awesome in their own right as well. Want to make a gallery but don't want to specify a row every 4 pictures? `col(1/4, cycle: 4)` - done. Want to change it up when you get down to mobile? Maybe just show 2 images per row? uncycle your 4-item cycle then... `col(1/2, uncycle: 4, cycle: 2)` - done.
+
 For more features, please refer to the documentation at <http://jeet.gs>
+
+## Edit Mode
+Edit mode assigns a light gray, semi-transparent, background to every element on the page. It's a little trick picked up over the years that makes visualizing the structure of your site trivial.
+
+````
+edit()
+````
 
 
 ## To be added - Grunt:
