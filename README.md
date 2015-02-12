@@ -29,6 +29,26 @@ abbr([font-size], [letter-spacing])
 ````
 More in progress.
 
+## Grid
+The grid system is based on Jeet. Rather than using something like `.col-4` seen other css grid frameworks, you can pass any ratio or fraction or both to create a completely custom grid.
+
+If you want something that takes up a quarter of the space of its parent container:
+````
+col(1/4)
+````
+To customize the gutter:
+````
+col(1/4, gutter: .5)
+````
+Offsetting is made trivial as well. For example: `col(1/4, offset: 1/4)` would create a column the quater of the size of its container and push it to the right a quarter.
+
+If you need a grid without gutters, use spans instead.
+````
+span(1/5)
+````
+For more features, please refer to the documentation at <http://jeet.gs>
+
+
 ## To be added - Grunt:
 - Automatic PHP server launch
 - Built-in Image optimization
